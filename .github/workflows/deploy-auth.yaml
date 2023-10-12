@@ -14,7 +14,7 @@ jobs:
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASWWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - run: cd auth && docker build -t tonidz/auth .
       - run: docker push tonidz/auth
       - uses: digitalocean/action-doctl@v2
